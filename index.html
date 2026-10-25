@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PlaceReady helps students assess skills, track progress and prepare for placements.">
+    <title>PlaceReady | Placement Preparation</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="#home" class="logo">
+    <span class="brand-name" style="color: #20234a !important; font-weight: 900 !important;display:block;font-size:32px !important">
+        Place<span class="brand-purple" style="color: #7255df !important; font-weight: 900 !important;">Ready</span>
+    </span>
+    <small style="color: #6b7280 !important;">CAREER PREPARATION</small>
+</a>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#assessment">Assessment</a>
+            <a href="#history">History</a>
+            <a href="#practice">Practice Plan</a>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="hero">
+            <div>
+                <p class="eyebrow">YOUR PLACEMENT JOURNEY STARTS HERE</p>
+                <h1>Prepare smarter.<br>Become placement-ready.</h1>
+                <p>Assess your skills, discover weak areas and track your preparation progress in one place.</p>
+                <a class="btn" href="#assessment">Start Assessment</a>
+            </div>
+            <div class="hero-card">
+                <span class="hero-icon">🎯</span>
+                <h2>Your goal, your progress</h2>
+                <p>Practice consistently. Improve one skill at a time.</p>
+            </div>
+        </section>
+
+        <section id="dashboard" class="section">
+            <div class="section-heading">
+                <p class="eyebrow">OVERVIEW</p>
+                <h2>Your Dashboard</h2>
+                <p>Track your assessment performance.</p>
+            </div>
+
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <p>Total Attempts</p>
+                    <h3 id="totalAttempts">0</h3>
+                </article>
+                <article class="stat-card">
+                    <p>Latest Average</p>
+                    <h3 id="latestAverage">0%</h3>
+                </article>
+                <article class="stat-card">
+                    <p>Best Average</p>
+                    <h3 id="bestAverage">0%</h3>
+                </article>
+            </div>
+
+            <div class="panel">
+                <h3>Skill Overview</h3>
+                <div id="skillOverview" class="skill-overview"></div>
+            </div>
+
+            <div class="panel">
+                <h3>Recommended Next Steps</h3>
+                <div id="recommendations"></div>
+            </div>
+        </section>
+
+        <section id="assessment" class="section section-tinted">
+            <div class="section-heading">
+                <p class="eyebrow">TEST YOUR KNOWLEDGE</p>
+                <h2>Skill Assessment</h2>
+                <p>Select a skill and answer all 10 questions.</p>
+            </div>
+
+            <div class="panel">
+                <label for="skillSelect">Choose a skill</label>
+                <select id="skillSelect">
+                    <option value="Coding">Coding</option>
+                    <option value="SQL">SQL</option>
+                    <option value="Aptitude">Aptitude</option>
+                    <option value="Communication">Communication</option>
+                </select>
+
+                <form id="assessmentForm">
+                    <div id="questionsContainer"></div>
+                    <button type="submit" class="btn">Submit Assessment</button>
+                </form>
+                <div id="assessmentResult" class="result" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section id="history" class="section">
+            <div class="section-heading">
+                <p class="eyebrow">YOUR IMPROVEMENT</p>
+                <h2>Assessment History</h2>
+                <p>Review your previous assessment attempts.</p>
+            </div>
+
+            <div class="panel">
+                <div class="history-summary">
+                    <p>Latest: <strong id="historyLatest">No attempts yet</strong></p>
+                    <p>Best: <strong id="historyBest">No attempts yet</strong></p>
+                    <p>Total attempts: <strong id="historyCount">0</strong></p>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Skill</th>
+                                <th>Score</th>
+                                <th>Correct</th>
+                                <th>Date and Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyBody">
+                            <tr>
+                                <td colspan="4">No assessments completed yet.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <button id="clearHistoryBtn" type="button" class="btn btn-danger">
+                    Clear Assessment History
+                </button>
+            </div>
+        </section>
+
+        <section id="practice" class="section section-tinted">
+            <div class="section-heading">
+                <p class="eyebrow">BUILD YOUR ROUTINE</p>
+                <h2>Practice Plan</h2>
+                <p>Create small goals and mark them as completed.</p>
+            </div>
+
+            <div class="panel">
+                <form id="taskForm" class="task-form">
+                    <label for="taskInput">New practice task</label>
+                    <input id="taskInput" type="text" maxlength="150"
+                           placeholder="e.g. Solve 3 SQL problems" required>
+                    <button class="btn" type="submit">Add Task</button>
+                </form>
+                <p id="taskCount">0 tasks</p>
+                <div id="taskList"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#home" class="footer-logo">PlaceReady</a>
+    <p>Built for learners preparing for their next opportunity.</p>
+    <small>© 2026 PlaceReady · Individual Mini Project</small>
+    </footer>
+</body>
+</html>
